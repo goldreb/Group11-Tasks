@@ -1,0 +1,23 @@
+body
+{
+background-color: #FCF4FC;
+}
+
+h1{
+    color: #79A2F3;
+    
+}
+
+h3, label, span{
+    color: #F07171;
+}
+
+p{
+    color: black;
+}
+
+.card{
+    background: #F4EFEF;
+    border: none;
+}
+
