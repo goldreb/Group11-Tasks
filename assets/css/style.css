@@ -21,3 +21,18 @@ p{
     border: none;
    
 }
+
+.fa-square-check{
+    color: green;
+}
+
+.fa-xmark{
+    color: red;
+}
+
+.fa-pen-to-square{
+    color: orange;
+}
+button{
+    border: none;
+}
