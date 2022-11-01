@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="/Group11-Tasks/assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Group-11 Tasks Lists</title>
   </head>
   <body>
@@ -39,7 +39,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="inputDetails" class="form-label">Details</label>
+            <label for="inputDetails" class="form-label ">Details</label>
             <textarea
               name="details"
               id="inputDetails"
@@ -86,11 +86,50 @@
           </div>
         </div>
       </section>
-      <section id="taskCard">
+      <section id="taskCard ">
         <div class="container d-md-flex justify-content-between">
-          <div class="row">
+          <div class="row ">
+            <div class="col-12 col-md-4 ">
+              <div class="card px-3 shadow mb-3">
+                <div class="card-body">
+                  <div class="card-text">
+                    <span id="inputTasks" class="title"
+                      >Title:
+                      <p class="cardtext">Doctor's Appt</p>
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span id="inputDetails" class="details"
+                      >Details:
+                      <p class="cardtext">Annual Check-up</p>
+                    </span>
+                  </div>
+                  <div class="card-text">
+                    <span id="inputDetails" class="title"
+                      >Assign to:
+                      <p class="cardtext">Kacie</p>
+                    </span>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <button
+                        class="btn btn-primary rounded-pill"
+                        type="submit"
+                      >
+                        Done
+                      </button>
+                    </div>
+                    <div class="col">
+                      <button class="btn btn-danger rounded-pill" type="submit">
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="col-12 col-md-4">
-              <div class="card px-3 shadow">
+              <div class="card px-3 shadow mb-3">
                 <div class="card-body">
                   <div class="card-text">
                     <span id="inputTasks" class="title"
@@ -132,45 +171,7 @@
               <div class="card px-3 shadow">
                 <div class="card-body">
                   <div class="card-text">
-                    <span id="inputTasks" class="title"
-                      >Title:
-                      <p class="cardtext">Doctor's Appt</p>
-                    </span>
-                  </div>
-                  <div class="card-text">
-                    <span id="inputDetails" class="details"
-                      >Details:
-                      <p class="cardtext">Annual Check-up</p>
-                    </span>
-                  </div>
-                  <div class="card-text">
-                    <span id="inputDetails" class="title"
-                      >Assign to:
-                      <p class="cardtext">Kacie</p>
-                    </span>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <button
-                        class="btn btn-primary rounded-pill"
-                        type="submit"
-                      >
-                        Done
-                      </button>
-                    </div>
-                    <div class="col">
-                      <button class="btn btn-danger rounded-pill" type="submit">
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-4">
-              <div class="card px-3 shadow">
-                <div class="card-body">
-                  <div class="card-text">
+              
                     <span id="inputTasks" class="title"
                       >Title:
                       <p class="cardtext">Doctor's Appt</p>
