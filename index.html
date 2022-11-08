@@ -32,10 +32,11 @@
       </header>
       <section>
         <div class="container">
+          <!-- New Tasks input -->
           <div class="row">
             <div class="col"><h3 class="newTasks">New Tasks</h3></div>
           </div>
-          <div class="mb-3">
+          <div class="mb-3" id="input-form">
             <label for="inputTasks" class="form-label">Title</label>
             <input
               type="text"
@@ -44,6 +45,8 @@
               placeholder="create tasks"
             />
           </div>
+
+          <!-- details input -->
           <div class="mb-3">
             <label for="inputDetails" class="form-label">Details</label>
             <textarea
@@ -54,9 +57,10 @@
               placeholder="create details"
             ></textarea>
           </div>
+
+          <!-- Name input in Assign to -->
           <div class="row">
             <div class="col">
-              <!-- <span>Assign to</span> -->
               <label for="assignTo" class="form-label">Assign to</label>
               <input
                 type="text"
@@ -66,6 +70,8 @@
                 aria-label="name"
               />
             </div>
+
+            <!-- status input -->
             <div class="col">
               <span>Status</span>
               <label for="statusId" class="form-label">Status</label>
@@ -77,11 +83,15 @@
                 aria-label="name"
               />
             </div>
+
+            <!-- Calendar -->
             <div class="col">
               <label for="dueDate" class="form-label">Due Date</label>
               <input type="date" class="form-control shadow" id="dueDate" />
             </div>
           </div>
+
+          <!-- button to add tasks -->
           <div class="container text-center p-5">
             <button
               class="btn btn-primary btn-lg shadow rounded-pill"
@@ -91,10 +101,15 @@
             </button>
           </div>
         </div>
+
+        <!-- beginning of cards -->
       </section>
       <section id="taskCard ">
         <div class="container d-md-flex justify-content-center">
           <div class="row">
+            <!--  -->
+
+            <!-- card 1 -->
             <div class="col-12 col-md-4">
               <div class="card px-3 shadow mb-3">
                 <div class="card-body">
@@ -132,6 +147,9 @@
                 </div>
               </div>
             </div>
+
+            <!--  -->
+            <!-- card 2 -->
             <div class="col-12 col-md-4">
               <div class="card px-3 shadow mb-3">
                 <div class="card-body">
@@ -169,6 +187,8 @@
                 </div>
               </div>
             </div>
+            <!--  -->
+            <!-- card 3 -->
             <div class="col-12 col-md-4">
               <div class="card px-3 shadow">
                 <div class="card-body">
@@ -206,6 +226,7 @@
                 </div>
               </div>
             </div>
+            <!-- end of cards -->
           </div>
         </div>
       </section>
@@ -216,5 +237,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
