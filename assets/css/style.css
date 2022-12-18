@@ -16,10 +16,16 @@ p{
     color: black;
 }
 
-.card{
-    background: #F4EFEF;
+/* cards output */
+
+.title, .details, .assignTo{
+    
     border: none;
    
+}
+
+.cards{
+    background: #FCF4FC;
 }
 
 .fa-square-check{
