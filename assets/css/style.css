@@ -1,44 +1,75 @@
-body
-{
-background-color: #FCF4FC;
+body {
+  background-color: #fcf4fc;
 }
 
-h1{
-    color: #79A2F3;
-    
+.container {
+  width: 80%;
 }
 
-h3, label, span{
-    color: #F07171;
+h1 {
+  color: #79a2f3;
 }
 
-p{
-    color: black;
+h3,
+label,
+span {
+  color: #1861f1;
+}
+
+p {
+  color: black;
 }
 
 /* cards output */
 
-.title, .details, .assignTo{
-    
-    border: none;
-   
+.title,
+.details,
+.assignTo {
+  border: none;
 }
 
-.cards{
-    background: #FCF4FC;
+.cards {
+  background: #fcf4fc;
 }
 
-.fa-square-check{
-    color: green;
+.fa-square-check {
+  color: green;
 }
 
-.fa-xmark{
-    color: red;
+.fa-xmark {
+  color: red;
 }
 
-.fa-pen-to-square{
-    color: orange;
+.fa-pen-to-square {
+  color: orange;
 }
-button{
-    border: none;
+button {
+  border: none;
 }
+
+/* alert  validation*/
+.messageAlert {
+  color: red;
+}
+
+.btn.error {
+  background-color: red;
+  color: white;
+}
+
+.form-field.success input {
+  border-color: green;
+}
+
+.form-field.error input {
+  border-color: red;
+}
+
+.form-field small {
+  visibility: hidden;
+}
+.form-field.error small {
+  visibility: visible;
+}
+
+/* end of validation */

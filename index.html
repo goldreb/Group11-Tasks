@@ -31,76 +31,84 @@
         </div>
       </header>
       <section>
-        <div class="container">
-          <!-- New Tasks input -->
-          <div class="row">
-            <div class="col"><h3 class="newTasks">New Tasks</h3></div>
-          </div>
-          <div class="mb-3" id="input-form">
-            <label for="inputTasks" class="form-label">Title</label>
-            <input
-              type="text"
-              class="form-control shadow"
-              id="inputTasks"
-              placeholder="create tasks"
-            />
-          </div>
+        <form action="" id="form-container">
+          <div class="container">
+            <!-- New Tasks  title input -->
 
-          <!-- details input -->
-          <div class="mb-3">
-            <label for="inputDetails" class="form-label">Details</label>
-            <textarea
-              name="details"
-              id="inputDetails"
-              rows="3"
-              class="form-control shadow"
-              placeholder="create details"
-            ></textarea>
-          </div>
-
-          <!-- Name input in Assign to -->
-          <div class="row">
-            <div class="col">
-              <label for="assignTo" class="form-label">Assign to</label>
-              <input
-                type="text"
-                id="assignTo"
-                class="form-control shadow"
-                placeholder="Name"
-                aria-label="name"
-              />
+            <div class="row">
+              <div class="col"><h3 class="newTasks">New Tasks</h3></div>
             </div>
-
-            <!-- status input -->
-            <div class="col">
-              <span>Status</span>
-              <label for="statusId" class="form-label">Status</label>
+            <div class="mb-3 form-field">
+              <label for="inputTasks" class="form-label">Title</label>
               <input
                 type="text"
                 class="form-control shadow"
-                id="statusId"
-                placeholder="Status"
-                aria-label="name"
+                id="inputTasks"
+                placeholder="create tasks"
               />
+              <small class="messageAlert"></small>
             </div>
 
-            <!-- Calendar -->
-            <div class="col">
-              <label for="dueDate" class="form-label">Due Date</label>
-              <input type="date" class="form-control shadow" id="dueDate" />
+            <!-- details input -->
+            <div class="mb-3 form-field">
+              <label for="inputDetails" class="form-label">Details</label>
+              <input
+                name="details"
+                id="inputDetails"
+                rows="3"
+                class="form-control shadow"
+                placeholder="create details"
+              />
+              <small class="messageAlert"></small>
+            </div>
+
+            <!-- Name input in Assign to -->
+            <div class="row">
+              <div class="col form-field">
+                <label for="assignTo" class="form-label">Assign to</label>
+                <input
+                  type="text"
+                  id="assignTo"
+                  class="form-control shadow"
+                  placeholder="Name"
+                  aria-label="name"
+                />
+                <small class="messageAlert"></small>
+              </div>
+
+              <!-- status input -->
+              <div class="col form-field">
+                <label for="statusId" class="form-label">Status</label>
+                <input
+                  type="text"
+                  class="form-control shadow"
+                  id="statusInput"
+                  placeholder="Status"
+                  aria-label="name"
+                />
+                <small class="messageAlert"></small>
+              </div>
+
+              <!-- Calendar -->
+              <div class="col form-field">
+                <label for="dueDate" class="form-label">Due Date</label>
+                <input type="date" class="form-control shadow" id="dueDate" />
+                <small class="messageAlert"></small>
+              </div>
+            </div>
+
+            <!-- button to add tasks -->
+            <div class="container text-center p-5">
+              <button
+                class="btn btn-outline-primary btn-lg shadow rounded-pill"
+                type="submit"
+              >
+                Add Tasks
+              </button>
+              <div class="messageAlert"></div>
             </div>
           </div>
-
-          <!-- button to add tasks -->
-          <div class="container text-center p-5">
-            <button
-              class="btn btn-primary btn-lg shadow rounded-pill"
-              type="submit"
-            >
-              Add Tasks
-            </button>
-          </div>
-        </div>
+        </form>
 
         <!-- beginning of cards -->
       </section>
@@ -185,6 +193,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
