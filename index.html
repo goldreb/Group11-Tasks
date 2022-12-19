@@ -35,52 +35,77 @@
           <div class="row">
             <div class="col"><h3 class="newTasks">New Tasks</h3></div>
           </div>
+<<<<<<< Updated upstream
+=======
+        <!--form validation-->
+        <form class="row g-3 needs-validation" novalidate>
+>>>>>>> Stashed changes
           <div class="mb-3">
             <label for="inputTasks" class="form-label">Title</label>
             <input
               type="text"
               class="form-control shadow"
-              id="inputTasks"
               placeholder="create tasks"
+              id="inputTasks" required
             />
+            <div class="invalid-feedback">Please enter a title.</div>
           </div>
           <div class="mb-3">
             <label for="inputDetails" class="form-label">Details</label>
             <textarea
               name="details"
-              id="inputDetails"
               rows="3"
               class="form-control shadow"
               placeholder="create details"
+              id="inputDetails"required
             ></textarea>
+            <div class="invalid-feedback">Please enter details.</div>
           </div>
+<<<<<<< Updated upstream
+=======
+          
+>>>>>>> Stashed changes
           <div class="row">
             <div class="col">
               <!-- <span>Assign to</span> -->
               <label for="assignTo" class="form-label">Assign to</label>
               <input
                 type="text"
-                id="assignTo"
                 class="form-control shadow"
                 placeholder="Name"
                 aria-label="name"
-              />
+                id="assignTo" required
+              /><div class="invalid-feedback">Please enter a name.</div>
             </div>
             <div class="col">
-              <span>Status</span>
+              <!-- <span>Status</span> -->
               <label for="statusId" class="form-label">Status</label>
-              <input
+              <select class="form-select" required aria-label="select example">
+      <option value="">Status</option>
+      <option value="1">Completed</option>
+      <option value="2">In Progress</option>
+      <option value="3">Not Started</option>
+    </select>
+    <div class="invalid-feedback">Please choose an option.</div>
+  </div>
+  <!--
+<input
                 type="text"
                 class="form-control shadow"
                 id="statusId"
                 placeholder="Status"
                 aria-label="name"
               />
+<<<<<<< Updated upstream
             </div>
+=======
+            </div> -->
+>>>>>>> Stashed changes
             <div class="col">
               <label for="dueDate" class="form-label">Due Date</label>
-              <input type="date" class="form-control shadow" id="dueDate" />
-            </div>
+              <input type="date" class="form-control shadow" id="dueDate" required/>
+            <div class="invalid-feedback">Invalid date.</div>
+          </div>
           </div>
           <div class="container text-center p-5">
             <button
@@ -89,8 +114,12 @@
             >
               Add Tasks
             </button>
-          </div>
+         </div>
         </div>
+<<<<<<< Updated upstream
+=======
+       </form>
+>>>>>>> Stashed changes
       </section>
       <section id="taskCard ">
         <div class="container d-md-flex justify-content-center">
@@ -216,5 +245,9 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+<<<<<<< Updated upstream
+=======
+    <script src="assets/js/script.js"></script>
+>>>>>>> Stashed changes
   </body>
 </html>
