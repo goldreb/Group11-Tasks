@@ -32,6 +32,7 @@ form.addEventListener("submit", (e) => {
     console.error(error)
   }
   console.log(tasks);
+ 
 });
 
 const validFormInput = () => {
@@ -70,8 +71,8 @@ const validFormInput = () => {
   } else {
     showSuccess(calendar);
   }
+  resetForm()
 
-  // resetForm()
 };
 
 const showError = (input, message) => {
@@ -87,11 +88,12 @@ const showSuccess = (input) => {
   formControl.className = "form-field success";
 };
 
-// const resetForm = (e) => {
-//   e.preventDefault();
-//     inputTitle.value = ""
-//     details.value = ""
-//     assign.value = ""
-//     status.value = ""
-//     dueDate.value = ""
-// }
+const resetForm = () => {
+ 
+
+    inputTasks.value = ""
+    detailsInput.value = ""
+    assignTo.value = ""
+    statusInput.value = ""
+    calendar.value = ""
+}
