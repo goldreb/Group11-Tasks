@@ -1,3 +1,5 @@
+import TaskManager from "./taskManager.js";
+
 // form container
 const form = document.querySelector("#form-container");
 //input field
@@ -11,18 +13,26 @@ const statusInput = document.querySelector("#statusInput");
 //calendar
 
 const calendar = document.querySelector("#dueDate");
-// //get the alert div
-// const messageAlerts = document.querySelectorAll(".messageAlert");
-// //form control
-// const formControls = document.querySelectorAll(".form-control");
-// const buttonAlert = document.querySelector(".btn");
+
+// ----task manager----
+
+const tasks = new TaskManager();
+
+
+
 
 //listen to submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validFormInput();
-});
 
+  try{
+    tasks.addTasks(inputTasks.value, detailsInput.value, assignTo.value, statusInput.value, calendar.value, tasks.currentID.id)
+  }catch(error) {
+    console.error(error)
+  }
+  console.log(tasks);
+});
 
 const validFormInput = () => {
   const inputTitle = inputTasks.value;
@@ -60,6 +70,8 @@ const validFormInput = () => {
   } else {
     showSuccess(calendar);
   }
+
+  // resetForm()
 };
 
 const showError = (input, message) => {
@@ -67,6 +79,7 @@ const showError = (input, message) => {
   const small = formControl.querySelector("small");
   formControl.className = "form-field error";
   small.innerText = message;
+
 };
 
 const showSuccess = (input) => {
@@ -74,10 +87,11 @@ const showSuccess = (input) => {
   formControl.className = "form-field success";
 };
 
-// const resetForm = () => {
-//     inputTasks.value = ""
-//     detailsInput.value = ""
-//     assignTo.value = ""
-//     statusInput.value = ""
-//     calendar.value = ""
+// const resetForm = (e) => {
+//   e.preventDefault();
+//     inputTitle.value = ""
+//     details.value = ""
+//     assign.value = ""
+//     status.value = ""
+//     dueDate.value = ""
 // }

@@ -30,7 +30,7 @@
           </div>
         </div>
       </header>
-      <section>
+      <section class="top-container">
         <form action="" id="form-container">
           <div class="container">
             <!-- New Tasks  title input -->
@@ -78,7 +78,7 @@
 
               <!-- status input -->
               <div class="col form-field">
-                <label for="statusId" class="form-label">Status</label>
+                <label for="statusInput" class="form-label">Status</label>
                 <input
                   type="text"
                   class="form-control shadow"
@@ -86,6 +86,18 @@
                   placeholder="Status"
                   aria-label="name"
                 />
+                
+                <!-- <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="statusInput"
+                  
+                >
+                  <option selected>Choose here</option>
+                  <option value="1" id="status1">Prioritized</option>
+                  <option value="2" id="status2">Holding</option>
+                  <option value="3" id="status3">In Progress</option>
+                </select> -->
                 <small class="messageAlert"></small>
               </div>
 
@@ -109,9 +121,10 @@
             </div>
           </div>
         </form>
-
-        <!-- beginning of cards -->
       </section>
+
+      <!-- beginning of cards -->
+
       <section id="taskCard ">
         <div class="container d-md-flex justify-content-center">
           <div class="row">
@@ -120,9 +133,11 @@
             <!-- card 1 -->
             <div class="col-12 col-md-4 mb-4">
               <div class="cards shadow p-4">
-                <p class="title">Title:</p>
-                <p class="details">Details:</p>
-                <p class="assignTo">Assign To:</p>
+                <div class="title">Title:</div>
+                <div class="details">Details:</div>
+                <div class="assignTo">Assign To:</div>
+                <div class="assignTo">Status:</div>
+                <div class="assignTo">Due Date:</div>
 
                 <div class="row">
                   <button class="col check-button" type="submit">
@@ -142,9 +157,11 @@
             <!-- card 2 -->
             <div class="col-12 col-md-4 mb-4">
               <div class="cards shadow p-4">
-                <p class="title">Title:</p>
-                <p class="details">Details:</p>
-                <p class="assignTo">Assign To:</p>
+                <div class="title">Title:</div>
+                <div class="details">Details:</div>
+                <div class="assignTo">Assign To:</div>
+                <div class="assignTo">Status:</div>
+                <div class="assignTo">Due Date:</div>
 
                 <div class="row">
                   <button class="col check-button" type="submit">
@@ -162,11 +179,13 @@
 
             <!--  -->
             <!-- card 3 -->
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mb-4">
               <div class="cards shadow p-4">
-                <p class="title">Title:</p>
-                <p class="details">Details:</p>
-                <p class="assignTo">Assign To:</p>
+                <div class="title">Title:</div>
+                <div class="details">Details:</div>
+                <div class="assignTo">Assign To:</div>
+                <div class="assignTo">Status:</div>
+                <div class="assignTo">Due Date:</div>
 
                 <div class="row">
                   <button class="col check-button" type="submit">
@@ -193,6 +212,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/index.js"></script>
+
+    <script type="module" src="./assets/js/taskManager.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
