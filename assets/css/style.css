@@ -58,12 +58,14 @@ button {
   color: white;
 }
 
-.form-field.success input {
-  border-color: green;
+.form-field.error input,
+.form-field.error select {
+  border-color: red;
 }
 
-.form-field.error input {
-  border-color: red;
+.form-field.success input,
+.form-field.success select {
+  border-color: green;
 }
 
 .form-field small {

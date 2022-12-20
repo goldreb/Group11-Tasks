@@ -18,7 +18,7 @@ const calendar = document.querySelector("#dueDate");
 
 const tasks = new TaskManager();
 
-
+ 
 
 
 //listen to submit
@@ -26,15 +26,25 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   validFormInput();
 
-  try{
-    tasks.addTasks(inputTasks.value, detailsInput.value, assignTo.value, statusInput.value, calendar.value, tasks.currentID.id)
-  }catch(error) {
-    console.error(error)
+  try {
+    tasks.addTasks(
+      inputTasks.value,
+      detailsInput.value,
+      assignTo.value,
+      statusInput.value,
+      calendar.value,
+      tasks.currentID.id
+
+    );
+  } catch (error) {
+    console.error(error);
   }
+  resetForm();
+
   console.log(tasks);
- 
 });
 
+//validation
 const validFormInput = () => {
   const inputTitle = inputTasks.value;
   const details = detailsInput.value;
@@ -71,8 +81,23 @@ const validFormInput = () => {
   } else {
     showSuccess(calendar);
   }
-  resetForm()
+ 
+};
 
+//to reset the form after the input has been submitted
+
+const resetForm = () => {
+  inputTasks.value = "";
+  detailsInput.value = "";
+  assignTo.value = "";
+  statusInput.value = "";
+  calendar.value = "";
+
+  // inputTasks.classList.remove("success");
+  // detailsInput.classList.remove("success");
+  // assignTo.classList.remove("success");
+  // statusInput.classList.remove("success");
+  // calendar.classList.remove("success");
 };
 
 const showError = (input, message) => {
@@ -80,20 +105,9 @@ const showError = (input, message) => {
   const small = formControl.querySelector("small");
   formControl.className = "form-field error";
   small.innerText = message;
-
 };
 
 const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = "form-field success";
 };
-
-const resetForm = () => {
- 
-
-    inputTasks.value = ""
-    detailsInput.value = ""
-    assignTo.value = ""
-    statusInput.value = ""
-    calendar.value = ""
-}
