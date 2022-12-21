@@ -1,38 +1,78 @@
-body
-{
-background-color: #FCF4FC;
+body {
+  background-color: #fcf4fc;
 }
 
-h1{
-    color: #79A2F3;
-    
+.top-container form {
+  width: 80%;
+  margin: 0 auto;
 }
 
-h3, label, span{
-    color: #F07171;
+h1 {
+  color: #79a2f3;
 }
 
-p{
-    color: black;
+h3,
+label,
+span {
+  color: #1861f1;
 }
 
-.card{
-    background: #F4EFEF;
-    border: none;
-   
+p {
+  color: black;
 }
 
-.fa-square-check{
-    color: green;
+/* cards output */
+
+.title,
+.details,
+.assignTo {
+  border: none;
 }
 
-.fa-xmark{
-    color: red;
+.cards {
+  background: #fcf4fc;
 }
 
-.fa-pen-to-square{
-    color: orange;
+.fa-square-check {
+  color: green;
 }
-button{
-    border: none;
+
+.fa-xmark {
+  color: red;
 }
+
+.fa-pen-to-square {
+  color: orange;
+}
+button {
+  border: none;
+}
+
+/* alert  validation*/
+.messageAlert {
+  color: red;
+}
+
+.btn.error {
+  background-color: red;
+  color: white;
+}
+
+.form-field.error input,
+.form-field.error select {
+  border-color: red;
+}
+
+.form-field.success input,
+.form-field.success select {
+  border-color: green;
+}
+
+.form-field small {
+  visibility: hidden;
+}
+.form-field.error small {
+  visibility: visible;
+}
+
+/* end of validation */
