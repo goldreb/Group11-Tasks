@@ -58,14 +58,14 @@ button {
   color: white;
 }
 
-.form-field.error input,
-.form-field.error select {
-  border-color: red;
-}
-
 .form-field.success input,
 .form-field.success select {
   border-color: green;
+}
+
+.form-field.error input,
+.form-field.error select {
+  border-color: red;
 }
 
 .form-field small {
@@ -76,3 +76,10 @@ button {
 }
 
 /* end of validation */
+
+/* updating, deleting, check-button */
+
+.doneCard{
+  text-decoration: line-through;
+  opacity: 0.5;
+}

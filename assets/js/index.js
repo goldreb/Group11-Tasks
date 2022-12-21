@@ -17,13 +17,15 @@ const calendar = document.querySelector("#dueDate");
 // ----task manager----
 
 const tasks = new TaskManager();
+tasks.render();
+tasks.getTasksById(0)
 
- 
-
+// end of task manager
 
 //listen to submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  e.stopPropagation();
   validFormInput();
 
   try {
@@ -32,14 +34,14 @@ form.addEventListener("submit", (e) => {
       detailsInput.value,
       assignTo.value,
       statusInput.value,
-      calendar.value,
-      tasks.currentID.id
-
+      calendar.value
     );
   } catch (error) {
     console.error(error);
   }
   resetForm();
+  tasks.render();
+  tasks.getTasksById(1)
 
   console.log(tasks);
 });
@@ -81,7 +83,6 @@ const validFormInput = () => {
   } else {
     showSuccess(calendar);
   }
- 
 };
 
 //to reset the form after the input has been submitted
@@ -110,4 +111,44 @@ const showError = (input, message) => {
 const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = "form-field success";
+};
+
+//getting the task card to update the task
+
+const taskCard = document.querySelector("#taskCard");
+// console.log(taskCard);
+
+taskCard.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  // if(event.target.classlist.contains("fa-square-check")){
+  //   const cardDone = event.target.parentElement.parentElement.parentElement;
+  //   console.log(cardDone)
+  // }
+
+  cardDone(event.target);
+  deleteCard(event.target);
+  // tasks.render();
+});
+
+// card is done
+let cardDone = (el) => {
+  if (el.classList.contains("fa-square-check")) {
+    let checkCard = el.parentElement.parentElement.parentElement;
+    checkCard.classList.add("doneCard");
+
+    let searchTask;
+   searchTask = tasks.getTasksById(checkCard);
+
+
+    // console.log(checkCard);
+  }
+};
+
+// delete the card
+let deleteCard = (el) => {
+  if (el.classList.contains("fa-xmark")) {
+    el.parentElement.parentElement.parentElement.remove();
+  }
+
 };
