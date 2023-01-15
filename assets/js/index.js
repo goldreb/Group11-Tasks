@@ -17,15 +17,16 @@ const calendar = document.querySelector("#dueDate");
 // ----task manager----
 
 const tasks = new TaskManager();
+tasks.load();
 tasks.render();
-tasks.getTasksById(0)
+tasks.getTasksById(0);
 
 // end of task manager
 
 //listen to submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  e.stopPropagation();
+  // e.stopPropagation();
   validFormInput();
 
   try {
@@ -41,7 +42,8 @@ form.addEventListener("submit", (e) => {
   }
   resetForm();
   tasks.render();
-  tasks.getTasksById(1)
+  tasks.getTasksById(1);
+  tasks.save();
 
   console.log(tasks);
 });
@@ -72,7 +74,7 @@ const validFormInput = () => {
     showSuccess(assignTo);
   }
 
-  if (status === "") {
+  if (status === " ") {
     showError(statusInput, "Please assign status");
   } else {
     showSuccess(statusInput);
@@ -83,22 +85,6 @@ const validFormInput = () => {
   } else {
     showSuccess(calendar);
   }
-};
-
-//to reset the form after the input has been submitted
-
-const resetForm = () => {
-  inputTasks.value = "";
-  detailsInput.value = "";
-  assignTo.value = "";
-  statusInput.value = "";
-  calendar.value = "";
-
-  // inputTasks.classList.remove("success");
-  // detailsInput.classList.remove("success");
-  // assignTo.classList.remove("success");
-  // statusInput.classList.remove("success");
-  // calendar.classList.remove("success");
 };
 
 const showError = (input, message) => {
@@ -113,7 +99,16 @@ const showSuccess = (input) => {
   formControl.className = "form-field success";
 };
 
-//getting the task card to update the task
+//to reset the form after the input has been submitted
+
+const resetForm = () => {
+  inputTasks.value = "";
+
+  detailsInput.value = "";
+  assignTo.value = "";
+  statusInput.value = "";
+  calendar.value = "";
+};
 
 const taskCard = document.querySelector("#taskCard");
 // console.log(taskCard);
@@ -121,34 +116,48 @@ const taskCard = document.querySelector("#taskCard");
 taskCard.addEventListener("click", (event) => {
   event.preventDefault();
 
-  // if(event.target.classlist.contains("fa-square-check")){
-  //   const cardDone = event.target.parentElement.parentElement.parentElement;
-  //   console.log(cardDone)
-  // }
-
   cardDone(event.target);
   deleteCard(event.target);
-  // tasks.render();
+  // removeLocalLists(deleteCard);
 });
 
-// card is done
+// card is done and will have a strikethrough on the card
 let cardDone = (el) => {
   if (el.classList.contains("fa-square-check")) {
     let checkCard = el.parentElement.parentElement.parentElement;
     checkCard.classList.add("doneCard");
 
-    let searchTask;
-   searchTask = tasks.getTasksById(checkCard);
+    // let searchTask;
+    // searchTask = tasks.getTasksById(checkCard);
 
-
-    // console.log(checkCard);
+    //console.log(checkCard);
   }
 };
 
 // delete the card
 let deleteCard = (el) => {
   if (el.classList.contains("fa-xmark")) {
-    el.parentElement.parentElement.parentElement.remove();
+    const parentTasks = el.parentElement.parentElement.parentElement;
+
+    parentTasks.remove();
+    removeLocalLists(parentTasks);
+  }
+};
+
+//remove localstorage
+
+function removeLocalLists(list) {
+  let lists;
+
+  if (localStorage.getItem("tasks") === null) {
+    lists = [];
+  } else {
+    lists = JSON.parse(localStorage.getItem("tasks"));
   }
 
-};
+  const listIndex = list.innerText;
+  console.log(list.innerText);
+
+  lists.splice(lists.indexOf(listIndex), 1);
+  localStorage.setItem("tasks", JSON.stringify(lists));
+}

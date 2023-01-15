@@ -1,8 +1,8 @@
 const createTaskHtml = (title, details, assignedTo, status, dueDate, id) => {
   const htmlCard = ` 
 
-    <div class="container d-flex justify-content-center" data-task-id="${id}" >
-        <div class="row">
+    <div class="container d-flex" data-task-id="${id}" >
+        <div class="row ">
             <div class="col-12  mb-4 taskCard" > 
                 <div class="cards shadow p-4">
                 <div class="title">Title:   ${title}</div>
@@ -36,7 +36,7 @@ export default class TaskManager {
   constructor(currentID = 0) {
     this.tasks = [
       {
-        id: 1,
+        id: 0,
         title: "grocery",
         details: "go to store",
         assignedTo: "me",
@@ -47,7 +47,7 @@ export default class TaskManager {
     this.currentID = currentID;
   }
   addTasks(title, details, assignedTo, status, dueDate) {
-    const arrObj = {
+    const task = {
       id: this.currentID++,
       title: title,
       details: details,
@@ -55,9 +55,8 @@ export default class TaskManager {
       status: status,
       dueDate: dueDate,
     };
-    this.tasks.push(arrObj);
-    console.log(arrObj);
-    // return this.tasks.push({ title, details, assignedTo, status, dueDate, id });
+    this.tasks.push(task);
+    console.log(task);
   }
 
   //render collected data
@@ -80,7 +79,7 @@ export default class TaskManager {
         formattedDate,
         element.id
       );
-// console.log(taskHtml)
+      //console.log(taskHtml)
       taskHtmlList.push(taskHtml);
     });
     //end of forEach
@@ -93,28 +92,43 @@ export default class TaskManager {
   //getting the id
   getTasksById(taskId) {
     let taskFound;
-    
 
-    this.tasks.forEach((element) => {
-      if (element.id === taskId) {
-        taskFound = element;
+    this.tasks.forEach((task) => {
+      if (task.id === taskId) {
+        taskFound = task;
         // console.log("found");
       }
     });
-    console.log(taskFound)
+    console.log(taskFound);
     return taskFound;
-
-
   }
-//   deleteTask(taskId) {
-//     const newTasks = [];
-//     this.tasks.forEach((element) => {
-//       if (element.id !== taskId) {
-//         newTasks.push(element);
-//       }
-//     });
-//     this.tasks = newTasks;
-//   }
+
+  //saving task to local storage
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem("tasks", tasksJson);
+    const currentID = new String(this.currentID);
+    localStorage.setItem("currentID", currentID);
+  }
+  load() {
+    if (localStorage.getItem("tasks")) {
+      const tasksJson = localStorage.getItem("tasks");
+      this.tasks = JSON.parse(tasksJson);
+      if (localStorage.getItem("currentId")) {
+        const currentId = localStorage.getItem("currentId");
+        this.currentId = new Number(currentId);
+      }
+    }
+  }
+  deleteTask(taskId) {
+    const newTasks = [];
+    this.tasks.forEach((task) => {
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+    });
+    this.tasks = newTasks;
+  }
 
   //change the color of the inputs once it is rendered in the page
 }
