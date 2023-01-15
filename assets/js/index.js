@@ -156,7 +156,7 @@ function removeLocalLists(list) {
   }
 
   const listIndex = list.innerText;
-  console.log(list.innerText);
+  // console.log(list.innerText);
 
   lists.splice(lists.indexOf(listIndex), 1);
   localStorage.setItem("tasks", JSON.stringify(lists));
