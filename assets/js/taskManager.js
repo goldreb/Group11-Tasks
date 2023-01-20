@@ -1,15 +1,21 @@
-const createTaskHtml = (title, details, assignedTo, status, dueDate, id) => {
+const createTaskHtml = (title, details, assignTo, status, dueDate, id) => {
   const htmlCard = ` 
 
     <div class="container d-flex" data-task-id="${id}" >
         <div class="row ">
             <div class="col-12  mb-4 taskCard" > 
+         
                 <div class="cards shadow p-4">
-                <div class="title">Title:   ${title}</div>
-                <div class="details">Details:    ${details}</div>
-                <div class="assignTo">Assign To:   ${assignedTo}</div>
-                <div class="assignTo">Status: ${status}</div>
-                <div class="assignTo">Due Date:   ${dueDate}</div>
+            
+                <span class="block">Title:</span><div class="title"> ${title}</div>
+               
+                <span class="block">Details:</span><div class="details">    ${details}</div>
+                
+                <span class="block">Assign To:</span><div class="assignTo">   ${assignTo}</div>
+              
+                <span class="block">Status:</span><div class="status"> ${status}</div>
+            
+                <span class="block">Due Date:</span><div class="date">     ${dueDate}</div>
 
                 <div class="row">
                     <button class="col check-button" type="submit">
@@ -19,13 +25,21 @@ const createTaskHtml = (title, details, assignedTo, status, dueDate, id) => {
                         <i class="fa-solid fa-xmark fa-xl"></i>
                     </button>
                     <button class="col edit-button" type="submit">
-                        <i class="fa-solid fa-pen-to-square fa-xl"></i>
+                        <i class="fa-solid fa-pen-to-square fa-xl data-id="1"></i>
                     </button>
                 </div>
+             
             </div>
     
         </div>
      </div>
+
+
+
+
+
+
+     
 
   `;
 
@@ -130,5 +144,5 @@ export default class TaskManager {
     this.tasks = newTasks;
   }
 
-  //change the color of the inputs once it is rendered in the page
+
 }

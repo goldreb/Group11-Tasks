@@ -56,33 +56,24 @@ const validFormInput = () => {
   const status = statusInput.value;
   const dueDate = calendar.value;
 
-  if (inputTitle === "") {
+  if (
+    inputTitle == "" ||
+    details == "" ||
+    assign == "" ||
+    status == "" ||
+    status == "" ||
+    dueDate == ""
+  ) {
     showError(inputTasks, "Task cannot be empty");
-  } else {
-    showSuccess(inputTasks);
-  }
-
-  if (details === "") {
     showError(detailsInput, "Details cannot be empty");
-  } else {
-    showSuccess(detailsInput);
-  }
-
-  if (assign === "") {
     showError(assignTo, "Please assign task");
-  } else {
-    showSuccess(assignTo);
-  }
-
-  if (status === " ") {
     showError(statusInput, "Please assign status");
-  } else {
-    showSuccess(statusInput);
-  }
-
-  if (dueDate === "") {
     showError(calendar, "Do not forget due date");
   } else {
+    showSuccess(inputTasks);
+    showSuccess(detailsInput);
+    showSuccess(assignTo);
+    showSuccess(statusInput);
     showSuccess(calendar);
   }
 };
@@ -118,6 +109,7 @@ taskCard.addEventListener("click", (event) => {
 
   cardDone(event.target);
   deleteCard(event.target);
+  editCard(event.target);
   // removeLocalLists(deleteCard);
 });
 
@@ -143,6 +135,28 @@ let deleteCard = (el) => {
     removeLocalLists(parentTasks);
   }
 };
+
+let editCard = (el) => {
+  if (el.classList.contains("fa-pen-to-square")) {
+    const card = el.parentElement.parentElement.parentElement;
+
+    inputTasks.value = card.children[1].innerText;
+
+    detailsInput.value = card.children[3].innerText;
+    console.log(detailsInput.value);
+    assignTo.value = card.children[5].innerText;
+    statusInput.value = card.children[7].innerText;
+    // calendar.value = card.children[9].innerText
+
+    card.remove();
+    removeLocalLists(card);
+  }
+};
+
+// .querySelector(".title")
+// card.querySelector(".details").
+// .querySelector(".assignTo")
+// .querySelector(".status")
 
 //remove localstorage
 

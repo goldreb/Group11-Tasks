@@ -1,5 +1,17 @@
-body {
+/* body {
   background-color: #fcf4fc;
+} */
+
+.overall__container {
+  margin-top: 3em;
+  box-shadow: 0px 0px 11px 1px rgba(240, 92, 133, 0.14),
+    0px 0px 19px 6px rgba(240, 92, 133, 0.03),
+    0px 0px 26px 12px rgba(240, 92, 133, 0.14),
+    0px 0px 29px 12px rgba(240, 92, 133, 0.14);
+  background-color: #fcf4fc;
+  border: 1px solid rgba(243, 107, 146, 0);
+  border-radius: 4px;
+  padding: 3em;
 }
 
 .top-container form {
@@ -7,18 +19,17 @@ body {
   margin: 0 auto;
 }
 
-.cards-container{
+.cards-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-
+  /* display: flex;
+  flex-direction: column; */
 }
 
 h1 {
   color: #79a2f3;
 }
 
-h3,
+h2,
 label,
 span {
   color: #1861f1;
@@ -32,8 +43,27 @@ p {
 
 .title,
 .details,
-.assignTo {
+.assignTo,
+.status,
+.date {
   border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(48, 48, 51);
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.date {
+  margin-bottom: 1em;
+}
+
+button {
+  background: #fcf4fc;
+}
+
+.form-field {
+  margin: 0.5em;
 }
 
 .cards {
@@ -42,14 +72,17 @@ p {
 
 .fa-square-check {
   color: green;
+  font-size: 2rem;
 }
 
 .fa-xmark {
   color: red;
+  font-size: 2rem;
 }
 
 .fa-pen-to-square {
   color: orange;
+  font-size: 2rem;
 }
 button {
   border: none;
@@ -82,11 +115,15 @@ button {
   visibility: visible;
 }
 
+.form-label {
+  font-size: 1.8rem;
+}
+
 /* end of validation */
 
 /* updating, deleting, check-button */
 
-.doneCard{
+.doneCard {
   text-decoration: line-through;
   opacity: 0.5;
 }

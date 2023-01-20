@@ -22,7 +22,7 @@
     <title>Group-11 Tasks Lists</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container overall__container">
       <header class="container text-center my-5">
         <div class="row">
           <div class="col">
@@ -36,9 +36,9 @@
             <!-- New Tasks  title input -->
 
             <div class="row">
-              <div class="col"><h3 class="newTasks">New Tasks</h3></div>
+              <div class="col"><h2 class="newTasks">New Tasks</h2></div>
             </div>
-            <div class="mb-3 form-field">
+            <div class="form-field">
               <label for="inputTasks" class="form-label">Title</label>
               <input
                 type="text"
@@ -50,7 +50,7 @@
             </div>
 
             <!-- details input -->
-            <div class="mb-3 form-field">
+            <div class="form-field">
               <label for="inputDetails" class="form-label">Details</label>
               <input
                 name="details"
@@ -79,16 +79,9 @@
               <!-- status input -->
               <div class="col form-field">
                 <label for="statusInput" class="form-label">Status</label>
-                <!-- <input
-                  type="text"
-                  class="form-control shadow"
-                  id="statusInput"
-                  placeholder="Status"
-                  aria-label="name"
-                /> -->
 
                 <select
-                  class="form-select form-field shadow"
+                  class="form-select shadow"
                   aria-label="Default select example"
                   id="statusInput"
                 >
@@ -116,7 +109,7 @@
               >
                 Add Tasks
               </button>
-              <div class="messageAlert"></div>
+              <small class="messageAlert"></small>
             </div>
           </div>
         </form>
@@ -125,18 +118,18 @@
       <!-- beginning of cards -->
 
       <section id="taskCard" class="cards-container">
-        <div class="container d-flex justify-content-center">
-          <div class="row ">
+        <div class="container">
+          <div class="row">
             <!--  -->
 
             <!-- card 1 -->
             <div class="col-12 taskCard" id="id">
               <div class="cards shadow p-4">
-                <div class="title">Title:</div>
+                <div class="title"><span>Title:</span></div>
                 <div class="details">Details:</div>
                 <div class="assignTo">Assign To:</div>
-                <div class="assignTo">Status:</div>
-                <div class="assignTo">Due Date:</div>
+                <div class="status">Status:</div>
+                <div class="date">Due Date:</div>
 
                 <div class="row">
                   <button class="col check-button" type="submit">
@@ -154,7 +147,7 @@
 
             <!--  -->
             <!-- card 2 -->
-            <div class="col-12 mb-4">
+            <!-- <div class="col-12 mb-4">
               <div class="cards shadow p-4">
                 <div class="title">Title:</div>
                 <div class="details">Details:</div>
@@ -174,7 +167,7 @@
                   </button>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!--  -->
             <!-- card 3 -->
