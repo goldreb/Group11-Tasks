@@ -46,10 +46,10 @@ Users should be able to:
 ## Author
 
 
-- Github -
+### Github 
 - Goldiluck Rebollido -  [@goldreb](https://github.com/goldreb)
 - Jeongwoon Eun-Jimenez - [@Tigerwon]()
-- Kacie Lim - [@sfkacie]()
+- Kacie Lim - [@sfkacie](https://github.com/sfkacie)
 - Xavier Malone - [@thakiddx](https://github.com/thakiddx)
 - Jamaal Shazier - [@JShaz](https://github.com/JShaz)
 - Mishack Sam-Hinton - 
