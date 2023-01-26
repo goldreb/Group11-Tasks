@@ -12,6 +12,7 @@
   border: 1px solid rgba(243, 107, 146, 0);
   border-radius: 4px;
   padding: 3em;
+
 }
 
 .top-container form {
@@ -21,8 +22,9 @@
 
 .cards-container {
   width: 100%;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 h1 {
