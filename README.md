@@ -41,6 +41,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Bootstrap
+- Javascript
 
 
 ## Author
@@ -52,6 +53,6 @@ Users should be able to:
 - Kacie Lim - [@sfkacie](https://github.com/sfkacie)
 - Xavier Malone - [@thakiddx](https://github.com/thakiddx)
 - Jamaal Shazier - [@JShaz](https://github.com/JShaz)
-- Mishack Sam-Hinton - 
+- Mishack Sam-Hinton - [@Shak750](https://github.com/Shak750)
 
 
