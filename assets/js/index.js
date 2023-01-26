@@ -13,6 +13,7 @@ const statusInput = document.querySelector("#statusInput");
 //calendar
 
 const calendar = document.querySelector("#dueDate");
+const button = document.querySelector('.cards-container')
 
 // ----task manager----
 
@@ -26,7 +27,7 @@ tasks.getTasksById(0);
 //listen to submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  // e.stopPropagation();
+  e.stopPropagation();
   validFormInput();
 
   try {
@@ -47,6 +48,8 @@ form.addEventListener("submit", (e) => {
 
   console.log(tasks);
 });
+
+
 
 //validation
 const validFormInput = () => {
@@ -89,6 +92,9 @@ const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = "form-field success";
 };
+
+
+
 
 //to reset the form after the input has been submitted
 
