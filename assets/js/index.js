@@ -13,7 +13,7 @@ const statusInput = document.querySelector("#statusInput");
 //calendar
 
 const calendar = document.querySelector("#dueDate");
-const button = document.querySelector('.cards-container')
+const button = document.querySelector(".cards-container");
 
 // ----task manager----
 
@@ -29,27 +29,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   e.stopPropagation();
   validFormInput();
-
-  try {
-    tasks.addTasks(
-      inputTasks.value,
-      detailsInput.value,
-      assignTo.value,
-      statusInput.value,
-      calendar.value
-    );
-  } catch (error) {
-    console.error(error);
-  }
-  resetForm();
-  tasks.render();
-  tasks.getTasksById(1);
-  tasks.save();
-
-  console.log(tasks);
 });
-
-
 
 //validation
 const validFormInput = () => {
@@ -78,6 +58,24 @@ const validFormInput = () => {
     showSuccess(assignTo);
     showSuccess(statusInput);
     showSuccess(calendar);
+
+    try {
+      tasks.addTasks(
+        inputTasks.value,
+        detailsInput.value,
+        assignTo.value,
+        statusInput.value,
+        calendar.value
+      );
+    } catch (error) {
+      console.error(error);
+    }
+    resetForm();
+    tasks.render();
+    tasks.getTasksById(1);
+    tasks.save();
+
+    console.log(tasks);
   }
 };
 
@@ -92,9 +90,6 @@ const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = "form-field success";
 };
-
-
-
 
 //to reset the form after the input has been submitted
 
