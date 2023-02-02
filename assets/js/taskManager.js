@@ -143,6 +143,4 @@ export default class TaskManager {
     });
     this.tasks = newTasks;
   }
-
-
 }
